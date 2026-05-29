@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafíos Avanzados de Física - Ondas</title>
+    <style>
+        :root {
+            --primary-color: #2D9CDB;
+            --text-color: #333;
+            --bg-color: #F0F4F8;
+            --card-bg: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .question-title {
+            font-size: 1.4em;
+            color: var(--primary-color);
+            margin-top: 0;
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 10px;
+        }
+
+        .enunciado {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options li {
+            background-color: var(--bg-color);
+            margin-bottom: 10px;
+            padding: 12px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .options li:hover {
+            background-color: #e1eaf0;
+        }
+
+        .btn-reveal {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+
+        .btn-reveal:hover {
+            background-color: #1f78a8;
+        }
+
+        .answer-box {
+            display: none; /* Oculto por defecto */
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            border-radius: 4px;
+        }
+
+        .clave {
+            font-size: 1.2em;
+            color: #2e7d32;
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .hint {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Desafíos Físicos: Ondas Avanzado</h1>
+        <p>Puzzles conceptuales para pensar más allá de la fórmula</p>
+    </div>
+
+    <div class="container">
+
+        <!-- PREGUNTA 1 -->
+        <div class="card">
+            <h2 class="question-title">Desafío 1: El "pulso fantasma"</h2>
+            <div class="enunciado">
+                <p>Dos pulsos de onda viajan en sentidos opuestos por una misma cuerda elástica tensa. El pulso 1 es un "monte" con una amplitud +A, y el pulso 2 es un "valle" idéntico con amplitud -A. Ambos viajan con la misma rapidez. En el instante exacto <strong>t<sub>0</sub></strong> en que ambos pulsos se superponen por completo, la cuerda se ve completamente horizontal (amplitud cero).</p>
+                <p>Si la energía no se puede crear ni destruir, ¿cómo se explica el estado de la energía mecánica de la onda en el instante t<sub>0</sub>?</p>
+            </div>
+            <ul class="options">
+                <li>A) La energía se anula momentáneamente por la interferencia destructiva y se "regenera" cuando los pulsos se separan.</li>
+                <li>B) La energía se disipa en forma de calor hacia el entorno debido al choque de los pulsos.</li>
+                <li>C) La energía potencial elástica es nula, pero la energía se conserva íntegramente como energía cinética de las partículas de la cuerda.</li>
+                <li>D) La energía se almacena momentáneamente como tensión estática en los extremos donde está amarrada la cuerda.</li>
+                <li>E) Al ser ondas mecánicas, la superposición destructiva destruye permanentemente la energía y la cuerda queda en reposo.</li>
+            </ul>
+            <button class="btn-reveal" onclick="toggleAnswer('ans1')">Mostrar Análisis</button>
+            <div id="ans1" class="answer-box">
+                <h3 class="clave">Clave: C</h3>
+                <p><strong>Por qué:</strong> En el instante t<sub>0</sub>, la cuerda está plana (no hay energía potencial elástica), pero las partículas de la cuerda se están moviendo a su máxima velocidad verticalmente para formar los pulsos que seguirán su camino. Toda la energía del sistema es exclusivamente cinética en ese milisegundo.</p>
+            </div>
+        </div>
+
+        <!-- PREGUNTA 2 -->
+        <div class="card">
+            <h2 class="question-title">Desafío 2: El sonido sobre el lago</h2>
+            <div class="enunciado">
+                <p>Durante un campamento, una estudiante nota un fenómeno curioso: en la tarde, cuando hace mucho calor, le resulta casi imposible escuchar los gritos de sus compañeros que están al otro lado de un lago. Sin embargo, en la madrugada, cuando el aire cerca del agua está muy frío y el aire superior se mantiene un poco más cálido, puede escuchar sus voces con total claridad desde la misma distancia.</p>
+                <p>Considerando que la rapidez del sonido en el aire aumenta a mayor temperatura, ¿cuál es la explicación física más rigurosa para este fenómeno?</p>
+            </div>
+            <ul class="options">
+                <li>A) En la madrugada, el sonido viaja más lento por el aire frío, dándole más tiempo a la onda para mantener su energía.</li>
+                <li>B) La diferencia de temperatura provoca que, en la madrugada, las ondas sonoras se refracten curvándose hacia abajo, concentrando el sonido cerca de la superficie.</li>
+                <li>C) El agua fría de la madrugada actúa como un espejo perfecto, produciendo interferencia constructiva que duplica la frecuencia.</li>
+                <li>D) Durante la tarde, el aire caliente absorbe las ondas de sonido transformándolas en ondas infrarojas.</li>
+                <li>E) En la madrugada el sonido se refracta curvándose hacia arriba, escapando hacia la atmósfera y evitando los obstáculos.</li>
+            </ul>
+            <button class="btn-reveal" onclick="toggleAnswer('ans2')">Mostrar Análisis</button>
+            <div id="ans2" class="answer-box">
+                <h3 class="clave">Clave: B</h3>
+                <p><strong>Por qué:</strong> En la noche ocurre una "inversión térmica" (aire frío abajo, cálido arriba). El sonido va más rápido arriba que abajo, por lo que el frente de onda se "dobla" hacia el suelo debido a la refracción gradual, atrapando el sonido contra el lago (sombra acústica inversa).</p>
+            </div>
+        </div>
+
+        <!-- PREGUNTA 3 -->
+        <div class="card">
+            <h2 class="question-title">Desafío 3: Cinemática Ondulatoria Sismológica</h2>
+            <div class="enunciado">
+                <p>Un terremoto genera ondas sísmicas internas: las P (longitudinales) y las S (transversales). Las ondas P siempre viajan a mayor rapidez que las ondas S (v<sub>p</sub> > v<sub>s</sub>). Ocurrido un sismo, dos estaciones en línea recta respecto al epicentro registran el evento.</p>
+                <p>En la estación Alfa, la onda S llega 8 segundos después que la onda P. En la estación Beta, la onda S llega 25 segundos después que la onda P. Si el terreno es homogéneo, es correcto concluir que:</p>
+            </div>
+            <ul class="options">
+                <li>A) La estación Beta registró un sismo de mayor intensidad geométrica que la estación Alfa.</li>
+                <li>B) Las ondas sísmicas disminuyeron su frecuencia al acercarse a Beta debido al roce.</li>
+                <li>C) La estación Alfa se encuentra a menor distancia del epicentro del sismo que la estación Beta.</li>
+                <li>D) La onda P experimentó refracción al pasar por Alfa, aumentando su rapidez hacia Beta.</li>
+                <li>E) El periodo de las ondas se desfasó por difracción en la estación Alfa.</li>
+            </ul>
+            <button class="btn-reveal" onclick="toggleAnswer('ans3')">Mostrar Análisis</button>
+            <div id="ans3" class="answer-box">
+                <h3 class="clave">Clave: C</h3>
+                <p><strong>Por qué:</strong> Imagina una carrera entre dos corredores de distinta velocidad que salen al mismo tiempo. Mientras más distancia recorren, mayor es la diferencia de tiempo entre ellos al cruzar una marca. Como en Alfa la diferencia es de 8s y en Beta de 25s, Alfa está más cerca del epicentro.</p>
+            </div>
+        </div>
+
+        <!-- PREGUNTA 4 -->
+        <div class="card">
+            <h2 class="question-title">Desafío 4: La fotografía del movimiento</h2>
+            <p class="hint">(Nota para el profesor: Dibujar en la pizarra una onda transversal donde P es la cima, Q es el corte del eje X de bajada, y R está en el vientre).</p>
+            <div class="enunciado">
+                <p>Se tiene una "fotografía" (un instante t<sub>0</sub>) de una onda transversal viajando por una cuerda de izquierda a <strong>derecha</strong>. </p>
+                <ul>
+                    <li>Punto <strong>P</strong>: exactamente en la cima de un monte.</li>
+                    <li>Punto <strong>Q</strong>: exactamente en la línea de equilibrio.</li>
+                </ul>
+                <p>Si analizamos el movimiento vertical (de subida o bajada) de estos fragmentos de cuerda en ese milisegundo exacto, es correcto afirmar que:</p>
+            </div>
+            <ul class="options">
+                <li>A) P tiene la máxima velocidad hacia arriba, porque está en el punto más alto.</li>
+                <li>B) Q tiene velocidad vertical nula, porque se encuentra en la posición de equilibrio.</li>
+                <li>C) P está momentáneamente en reposo y Q se está moviendo hacia abajo con la máxima rapidez.</li>
+                <li>D) Todos los puntos tienen la misma velocidad vertical (igual a la propagación de la onda).</li>
+                <li>E) Q se mueve hacia arriba para prepararse para formar el siguiente monte.</li>
+            </ul>
+            <button class="btn-reveal" onclick="toggleAnswer('ans4')">Mostrar Análisis</button>
+            <div id="ans4" class="answer-box">
+                <h3 class="clave">Clave: C</h3>
+                <p><strong>Por qué:</strong> La velocidad instantánea cambia. En la cima (P), la partícula llega a su máximo, se detiene un instante (velocidad 0) y empieza a bajar. En el punto de equilibrio (Q), como la onda va a la derecha, el valle que viene "arrastrará" a Q hacia abajo, siendo este su punto de máxima velocidad.</p>
+            </div>
+        </div>
+
+        <!-- PREGUNTA 5 -->
+        <div class="card">
+            <h2 class="question-title">Desafío 5: La puerta que se cierra</h2>
+            <div class="enunciado">
+                <p>En una sala insonorizada, un parlante emite un sonido constante de 1 metro de longitud de onda. La sala tiene una pesada puerta que da a un pasillo. Inicialmente la puerta está abierta (3 metros de ancho) y se va cerrando lentamente hasta dejar una ranura de 10 cm.</p>
+                <p>Un estudiante camina por el pasillo escuchando el sonido. A medida que la puerta se cierra casi por completo, ¿qué fenómeno contraintuitivo experimentará?</p>
+            </div>
+            <ul class="options">
+                <li>A) El sonido se concentrará en un "rayo" cada vez más estrecho frente a la puerta, creando zonas de silencio.</li>
+                <li>B) El volumen aumentará porque la misma energía debe pasar por un espacio menor.</li>
+                <li>C) El sonido cambiará a un tono agudo, actuando la ranura como filtro.</li>
+                <li>D) El sonido comenzará a esparcirse en todas direcciones al salir por la puerta, llenando zonas que antes estaban en "sombra acústica".</li>
+                <li>E) La longitud de onda disminuirá proporcionalmente para poder salir.</li>
+            </ul>
+            <button class="btn-reveal" onclick="toggleAnswer('ans5')">Mostrar Análisis</button>
+            <div id="ans5" class="answer-box">
+                <h3 class="clave">Clave: D</h3>
+                <p><strong>Por qué:</strong> Límite de la difracción. Cuando el agujero es mucho más grande que la onda, esta viaja recto. Cuando el tamaño de la apertura tiende a ser igual o menor que la longitud de onda (10cm vs 1m), la ranura se convierte en un emisor puntual que esparce la onda esféricamente (difracción máxima).</p>
+            </div>
+        </div>
+
+        <!-- PREGUNTA 6 -->
+        <div class="card">
+            <h2 class="question-title">Desafío 6: El pozo sin fondo</h2>
+            <div class="enunciado">
+                <p>Un estudiante deja caer libremente un dron por un pozo volcánico. El dron emite un pitido constante de 500 Hz. El estudiante escucha desde el borde mientras el dron cae acelerando por la gravedad.</p>
+                <p>Ignorando el tiempo que tarda el sonido en volver arriba, ¿cómo describirá el estudiante la frecuencia que escucha a medida que el dron cae?</p>
+            </div>
+            <ul class="options">
+                <li>A) Constante pero menor a 500 Hz, ya que la caída libre es uniforme.</li>
+                <li>B) Disminuye gradualmente; al principio baja lentamente, pero cada segundo se hace grave de forma más rápida.</li>
+                <li>C) Disminuye a una tasa constante, bajando la misma cantidad de Hz cada segundo debido a que la gravedad es constante.</li>
+                <li>D) Se vuelve cada vez más agudo al comprimirse las ondas contra el fondo.</li>
+                <li>E) 500 Hz constante, pero disminuyendo su volumen por la distancia.</li>
+            </ul>
+            <button class="btn-reveal" onclick="toggleAnswer('ans6')">Mostrar Análisis</button>
+            <div id="ans6" class="answer-box">
+                <h3 class="clave">Clave: B</h3>
+                <p><strong>Por qué:</strong> Por efecto Doppler, al alejarse se percibe más grave (< 500Hz). Como hay aceleración de gravedad, la velocidad de alejamiento aumenta, haciéndose cada vez más grave. Al estar la velocidad en el denominador de la fórmula de Doppler, el cambio no es lineal: a velocidades mayores, la caída en Hz es cada vez más abrupta.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none" || element.style.display === "") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
